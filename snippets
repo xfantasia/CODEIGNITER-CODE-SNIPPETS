@@ -504,11 +504,22 @@ Redirect('https://www.naijaecards.com/ne/home/cards', false);
 	
 	
 ************** LOAD USERS SPECIFIC DATA **************
-<?php
 <!--LOAD USERS DATA-->
 	<?php foreach ($users_records as $value2): ?>
 		<?php if($value2['pid_user'] == $value['pid_user']){?> 
 				<?= $value2['first_name']; ?> <?= $value2['last_name']; ?>
 		<?php } ?>	
 	<?php  endforeach; ?> 	
+	
+	
+	
+************** COUNT NUMBER OF ROWS IN A RECORD **************
+<!--LOAD USERS DATA-->	
+<?php  $users_count=0; ?>
+	<?php foreach ($users_records as $value5): ?>
+			<?php if(($value5['ref_id'] == $affiliate_id)){?>								<?php $users_count = $users_count + 1; ?>		
+			<?php } ?>	
+	<?php  endforeach; ?>
+<?php echo number_format($users_count); ?>	
+	
 	

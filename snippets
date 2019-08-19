@@ -45,6 +45,15 @@ echo $data["data2"]["admin"];exit;
 </form>
 
 
+******MODEL SECTION******
+//GET USER DETAILS
+$table_users = "affiliates";
+$query = $this->db->query("SELECT * FROM {$table_users} WHERE pid_user='$this->pid_userx'"); //Query Database
+$data_user = $query->result_array(); //Generate Database result in array
+$this->full_name = $data_user[0]['first_name']." ".$data_user[0]['last_name'];
+$this->user_email = $data_user[0]['email'];
+
+
 
 
 ******CONTROLLER SECTION******

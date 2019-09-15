@@ -19,6 +19,14 @@ $table_wallet = "wallet";
 $old_amount = $this->db->query("SELECT * FROM {$table_wallet} WHERE pid = '$pid_user'")->row()->amount;
 
 
+//CHECK IF RECORD ALREADY EXISTS
+$tablex3 = "wallet";
+$query3 = $this->db->query("SELECT * FROM {$tablex3} WHERE pid ='$pid_user'"); //Query Database
+if($query3->num_rows() == 1)
+{
+//DO ACTION
+}
+
 //form
 <?php echo form_open_multipart(base_url().'ne/functionx');?>
 

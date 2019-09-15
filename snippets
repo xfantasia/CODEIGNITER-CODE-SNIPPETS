@@ -14,6 +14,11 @@ $this->session->userdata('pid');
 redirect(base_url()."cm/home/cms-view-pages");
 
 
+//GET SINGLE ROW FIELD VALUE
+$table_wallet = "wallet";
+$old_amount = $this->db->query("SELECT * FROM {$table_wallet} WHERE pid = '$pid_user'")->row()->amount;
+
+
 //form
 <?php echo form_open_multipart(base_url().'ne/functionx');?>
 

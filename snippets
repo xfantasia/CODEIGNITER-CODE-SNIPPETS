@@ -19,6 +19,12 @@ $table_wallet = "wallet";
 $old_amount = $this->db->query("SELECT * FROM {$table_wallet} WHERE pid = '$pid_user'")->row()->amount;
 
 
+//PULL USER RECORD
+$tablex = "users";
+$query = $this->db->query("SELECT * FROM {$tablex} WHERE username = '$member_email'");
+$group_user_records = $query->result_array(); //Generate Database result in array
+
+
 //CHECK IF RECORD ALREADY EXISTS
 $tablex3 = "wallet";
 $query3 = $this->db->query("SELECT * FROM {$tablex3} WHERE pid ='$pid_user'"); //Query Database

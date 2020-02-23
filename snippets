@@ -570,9 +570,10 @@ Redirect('https://www.naijaecards.com/ne/home/cards', false);
 
 	$file_exist3 = file_exists(FCPATH."assets/report_docs/report-doc-".$this->uri->segment(4).".doc"); //.DOC
 
-	//CHECK IF EITHER OF THE FILES EXIST
-	if($file_exist1 || $file_exist2 || $file_exist3){$file_exist = "true";}
-	else{$file_exist = "false";}
+	//CHECK IF EITHER OF THE FILES EXIST AND APPLY ACTION VARIABLES
+	if($file_exist1 || $file_exist2 || $file_exist3)
+	{$file_exist = "true";$show_div1 = "hidden";$show_div2 = "";}
+	else{$file_exist = "false";$show_div1 = "";$show_div2 = "hidden";}
 ?>	
 	
 	

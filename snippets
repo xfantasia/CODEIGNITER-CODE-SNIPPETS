@@ -559,3 +559,21 @@ Redirect('https://www.naijaecards.com/ne/home/cards', false);
 <?php echo number_format($users_count); ?>	
 	
 	
+	
+	
+************** CHECK IF FILE EXISTS **************	
+<?php 
+	//FILE PATHS TO CHECK
+	$file_exist1 = file_exists(FCPATH."assets/report_docs/report-doc-".$this->uri->segment(4).".pdf"); //.PDF
+
+	$file_exist2 = file_exists(FCPATH."assets/report_docs/report-doc-".$this->uri->segment(4).".docx"); //.DOCX
+
+	$file_exist3 = file_exists(FCPATH."assets/report_docs/report-doc-".$this->uri->segment(4).".doc"); //.DOC
+
+	//CHECK IF EITHER OF THE FILES EXIST
+	if($file_exist1 || $file_exist2 || $file_exist3){$file_exist = "true";}
+	else{$file_exist = "false";}
+?>	
+	
+	
+	
